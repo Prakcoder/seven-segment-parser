@@ -1,3 +1,31 @@
-<p>
-  seven-segment works!
-</p>
+<div class="center">
+
+    <h1>Seven Segment Parser</h1>
+
+    <div>
+        <div>
+            <div>
+                <input type='file' (change)="readInputFile($event)">
+            </div>
+            <textarea>{{fileData}}</textarea>
+        </div>
+
+        <div>
+            <div>
+                <button (click)="parseInput()">Parse Seven Segments</button>
+            </div>
+            <textarea>{{output}}</textarea>
+        </div>
+    </div>
+
+    <div *ngIf="output">
+        <h1>Test</h1>
+        <div>
+            <input type='file' (change)="readTestFile($event)">
+            <button (click)="testOutput()">Test output</button>
+        </div>
+        <div>
+            <h2>{{testResult}}</h2>
+        </div>
+    </div>
+</div>
