@@ -3,6 +3,20 @@
     align-items: center;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    margin-left: 13rem;
+    margin-bottom: 1rem;
+    font-size: 2em;
+    font-weight: 600;
+
+    @media only screen and (max-width: 600px) {
+        margin-left: 5rem;
+        font-size: 1.5em;
+    }
+}
+
 table {
     table-layout: fixed;
     width: 100%;
@@ -19,4 +33,9 @@ textarea {
     @media only screen and (max-width: 600px) {
         min-height: 15rem;
     }
+}
+
+
+img {
+    width: 10%;
 }
