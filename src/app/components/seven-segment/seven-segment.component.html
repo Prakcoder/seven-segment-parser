@@ -1,30 +1,22 @@
 <div class="center">
-
     <h1>Seven Segment Parser</h1>
 
-    <div>
-        <div>
-            <div>
-                <input type='file' (change)="readInputFile($event)">
-            </div>
-            <textarea>{{fileData}}</textarea>
-        </div>
+    <table>
+        <tr>
+            <td><input type='file' (change)="readInputFile($event)"></td>
+            <td><button (click)="parseInput()">Parse Seven Segments</button></td>
+        </tr>
+        <tr>
+            <td><textarea>{{fileData}}</textarea></td>
+            <td><textarea>{{output}}</textarea></td>
+        </tr>
+    </table>
 
-        <div>
-            <div>
-                <button (click)="parseInput()">Parse Seven Segments</button>
-            </div>
-            <textarea>{{output}}</textarea>
-        </div>
-    </div>
-
-    <div *ngIf="output">
+    <div class="test" *ngIf="output">
         <h1>Test</h1>
         <div>
             <input type='file' (change)="readTestFile($event)">
             <button (click)="testOutput()">Test output</button>
-        </div>
-        <div>
             <h2>{{testResult}}</h2>
         </div>
     </div>
