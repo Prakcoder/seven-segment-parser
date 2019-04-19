@@ -26,7 +26,12 @@ function createArrayWithEmptyString(length: number) {
 function parsePattern(singleInvoicePatterns: string[]) {
     let parsedNumber = '';
     singleInvoicePatterns.forEach(a => {
-        parsedNumber += SEVEN_SEGMENT_PATTERNS[a];
+        const parsedVal = SEVEN_SEGMENT_PATTERNS[a];
+        if (parsedVal === undefined || parsedVal === null) {
+            parsedNumber += '?';
+        } else {
+            parsedNumber += parsedVal;
+        }
     });
     return parsedNumber + NEW_LINE_CHAR_IN_FILE;
 }
